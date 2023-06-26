@@ -7,13 +7,9 @@ Developing of the tello_driver ROS package is inspired by [tello_driver](https:/
 
 ## Installation
 
-### ROS distribution  
-Binary release from the ROS repository:  
-* Kinetic: ``` $ sudo apt install ros-kinetic-tello-driver```
-
 ### Build from source
 * ```$ cd <CATKIN_WS/SRC>```
-* ```$ git clone --recursive https://github.com/appie-17/tello_driver.git```
+* ```$ git clone --recursive https://github.com/ucl-frl/tello_driver.git```
 * ```$ cd ..```
 * ```$ catkin_make```
 * ```$ source devel/setup.bash```
@@ -22,8 +18,7 @@ Binary release from the ROS repository:
 
 * Turn on Tello drone
 * Connect to drone's WiFi access point (```TELLO_XXXXXX)```
-* ```$ roslaunch tello_driver tello_node.launch```
-* ```$ roslaunch tello_driver joy_teleop.launch```
+* ```$ roslaunch tello_driver tello_joy.launch```
 
 # 2. Nodes
 
@@ -67,8 +62,9 @@ TODO
 * ```~/tello_driver_node/attitude_limit```
 * ```~/tello_driver_node/low_bat_threshold```
 
-## 2.2 gamepad_teleop_node
-Converting gamepad input controls from ```joy_node``` to commands for ```tello_driver_node```
+## 2.2 gamepad_teleop_node & joy_teleop_node
+* Converting gamepad input controls from ```joy_node``` to commands for ```tello_driver_node```
+* Converting xbox wired controller input controls from ```joy_node``` to commands for ```tello_driver_node```
 
 ### Subscribed topics
 * ```/joy``` [sensor_msgs/Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html)
