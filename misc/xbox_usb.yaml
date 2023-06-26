@@ -1,0 +1,66 @@
+# Configuration file for joy_teleop
+#
+# Microsoft Xbox 360 gamepad connected to USB
+
+teleop:
+  piloting:
+    type: topic
+    message_type: "geometry_msgs/Twist"
+    topic_name: cmd_vel
+    axis_mappings:
+      -
+        axis: 4  # Right stick Forward/Backward; 1.0 is forward and -1.0 is back
+        target: linear.x
+        scale: 1.0
+        offset: 0.0
+      -
+        axis: 3  # Right stick Left/Right; 1.0 is left and -1.0 is right
+        target: linear.y
+        scale: 1.0
+        offset: 0.0
+      -
+        axis: 1  # Left stick FB
+        target: linear.z
+        scale: 1.0
+        offset: 0.0
+      -
+        axis: 0  # Left stick LR
+        target: angular.z
+        scale: 1.0
+        offset: 0.0
+  takeoff:
+    type: topic
+    message_type: "std_msgs/Empty"
+    topic_name: takeoff
+    deadman_buttons: [7]  # Menu Button
+    axis_mappings: []
+  land:
+    type: topic
+    message_type: "std_msgs/Empty"
+    topic_name: land
+    deadman_buttons: [6]  # View Button
+    axis_mappings: []
+  emergency:
+    type: topic
+    message_type: "std_msgs/Empty"
+    topic_name: reset
+    deadman_buttons: [2] # X button
+    axis_mappings: []
+  flattrim:
+    type: topic
+    message_type: "std_msgs/Empty"
+    topic_name: flattrim
+    deadman_buttons: [0] # A button
+    axis_mappings: []
+  flip:
+    type: topic
+    message_type: "std_msgs/UInt8"
+    topic_name: flip
+    deadman_buttons: [1] # B button
+    axis_mappings: []
+  snapshot:
+    type: topic
+    message_type: "std_msgs/Empty"
+    topic_name: snapshot
+    deadman_buttons: [3] # Y button
+    axis_mappings: []
